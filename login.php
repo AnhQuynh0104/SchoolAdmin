@@ -1,20 +1,3 @@
-<?php
-//include 'dbconect.php';
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $db = mysqli_connect("localhost", "root", "", "users");
-    
-    $sql = "select * from users where username='$username' and password='$password'";
-
-    $rs = mysqli_query($db, $sql);
-    if(mysqli_num_rows($rs) > 0){
-        echo "<h1>Login tahnh cong</h1>";
-    } else{
-        echo "<h1>That bai</h1>";
-    }
-    
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +34,9 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6 d-none d-lg-block ">
+                                <img src="src/images/ptit_2019_1.jpg" width="500px" height="500px" alt="" srcset="">
+                            </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
@@ -111,10 +96,3 @@
 
 </html>
 
-<!-- create table student (
-    id int primary key auto_increment,
-    fullname varchar(80) not null,
-    msv varchar(10),
-    class varchar(10),
-    gpa float
-) -->

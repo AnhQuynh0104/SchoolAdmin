@@ -1,6 +1,6 @@
 <?php
 require_once('config.php');
-
+$conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
 function execute($sql){
     $connection = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
 

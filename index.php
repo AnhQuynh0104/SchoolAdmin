@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PTIT Admin 2 - Dashboard</title>
+    <title>PTIT Admin - Trang chủ</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -40,15 +40,11 @@
                     <span>Môn học - Học phí </span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="tables.php">
+                <a class="nav-link" href="topstudents.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Sinh viên tiêu biểu </span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="tables.php">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Đăng ký ký túc xá </span></a>
-            </li>
+            
             <hr class="sidebar-divider d-none d-md-block">
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -125,10 +121,10 @@
                                 </a>
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    cài đặt
+                                    Cài đặt
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="login.php" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Đăng xuất
                                 </a>
@@ -226,24 +222,23 @@
                     </div>
                     <div class="row">
                         <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Tổng quan lượt truy cập</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
+                            
+                                <!-- Illustrations -->
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">Bài viết mới</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="text-center">
+                                            <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 9rem;"
+                                                src="src/images/logo.png" alt="...">
+                                        </div>
+                                        <p>Logo của Học viện thể hiện hình ảnh cô đọng nhất về Học viện. Khối Logo của Học viện bao gồm hình tròn và hình vuông. Theo quan niệm Á Đông, hình tròn tượng trưng cho sự sinh tồn vĩnh cửu của tự nhiên, nói lên sự đầy đủ, thịnh vượng và phát triển. Cũng theo ý nghĩa triết học Phương Đông, logo Học viện thể hiện mối quan hệ cơ bản: Thiên (tròn) – Địa (vuông) – Nhân (Học viện); trong đó Học viện là trung tâm. Cấu trúc logo mở thể hiện Học viện gắn liền với thực tiễn, với xã hội và luôn phát triển không ngừng.</p>
+                                        <a target="_blank" rel="nofollow" href="https://undraw.co/">Xem thêm &rarr;</a>
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </div>     
+                          
 
                         <div class="col-xl-4 col-lg-5">
                             <div class="card shadow mb-4">
@@ -289,15 +284,15 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Bạn muốn đăng xuất?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Chọn "Đăng xuất" nếu bạn muốn rời phiên làm việc.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Hủy</button>
+                    <a class="btn btn-primary" href="login.php">Đăng xuất</a>
                 </div>
             </div>
         </div>

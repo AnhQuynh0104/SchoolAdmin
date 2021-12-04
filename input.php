@@ -4,7 +4,7 @@ require_once ('dbconnect.php');
 $s_fullname = $s_msv = $s_class = $s_gpa = '';
 
 if (!empty($_POST)) {
-	$s_id = '';
+	
 
 	if (isset($_POST['fullname'])) {
 		$s_fullname = $_POST['fullname'];
@@ -26,11 +26,7 @@ if (!empty($_POST)) {
 		$s_id = $_POST['id'];
 	}
 
-	$s_fullname = str_replace('\'', '\\\'', $s_fullname);
-	$s_msv      = str_replace('\'', '\\\'', $s_msv);
-	$s_class  = str_replace('\'', '\\\'', $s_class);
-	$s_gpa       = str_replace('\'', '\\\'', $s_gpa);
-	$s_id       = str_replace('\'', '\\\'', $s_id);
+	
 
 	if ($s_id != '') {
 		//update
@@ -82,7 +78,7 @@ if (isset($_GET['id'])) {
 	<div class="container">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<h2 class="text-center">Thêm sinh viên</h2>
+				<h2 class="text-center">Thông tin sinh viên</h2>
 			</div>
 			<div class="panel-body">
 				<form method="post">

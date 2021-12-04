@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PTIT Admin 2 - Tables</title>
+    <title>PTIT Admin - Sinh viên</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -46,15 +46,11 @@
                     <span>Môn học - Học phí </span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="tables.php">
+                <a class="nav-link" href="topstudents.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Sinh viên tiêu biểu </span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="tables.php">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Đăng ký ký túc xá </span></a>
-            </li>
+           
             <hr class="sidebar-divider d-none d-md-block">
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -134,7 +130,7 @@
                                     cài đặt
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="login.php" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Đăng xuất
                                 </a>
@@ -150,8 +146,12 @@
                             <h6 class="m-0 font-weight-bold text-primary">Thông tin sinh viên</h6>
                         </div>
                         <div class="card-body">
+                        
                             <div class="table-responsive">
-                                <table class="table table-bordered"  width="100%" cellspacing="0">
+                                <table class=" table table-bordered"  width="100%" cellspacing="0">
+                                    <div class="col-lg-12">
+                                        <input type="text" id="search" class=" form-control" placeholder="Tìm sinh viên..." onkeyup="searchStu(this.value)">
+                                    </div>
                                     <thead>
                                         <tr>
                                             <th>STT</th>
@@ -175,7 +175,7 @@
                                             
                                         </tr>
                                     </tfoot>
-                                    <tbody>
+                                    <tbody class="list">
 <?php
 if (isset($_GET['s']) && $_GET['s'] != '') {
 	$sql = 'select * from student where fullname like "%'.$_GET['s'].'%"';
@@ -200,6 +200,7 @@ foreach ($studentList as $std){
                                         
                                         
                                     </tbody>
+                                    <hr>
                                     <button class="add btn btn-primary mb-4" onclick="window.open('input.php', '_self')">Thêm sinh viên</button>
                                 </table>
                             </div>
@@ -222,15 +223,15 @@ foreach ($studentList as $std){
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Bạn muốn đăng xuất?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Chọn "Đăng xuất" nếu bạn muốn rời phiên làm việc.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Hủy</button>
+                    <a class="btn btn-primary" href="login.php">Đăng xuất</a>
                 </div>
             </div>
         </div>
@@ -251,8 +252,15 @@ foreach ($studentList as $std){
 				location.reload()
 			})
 		}
+        function searchStu(stu){
+                $.post('ajax.php', {data: stu}, function(data){
+                    $('.list').html(data);
+                })  
+        }
+        
 	</script>
 
+    
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
